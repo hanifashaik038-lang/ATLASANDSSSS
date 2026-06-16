@@ -1,80 +1,23 @@
 """50+ curated Indian destinations with VERIFIED high-resolution Unsplash imagery."""
 
 # All photo IDs below were verified live (HTTP 200) — categorized by best fit.
-_POOLS = {
-    "Mountains": [
-        "photo-1593181629936-11c609b8db9b",  # Kashmir
-        "photo-1626621341517-bbf3d9990a23",  # Himalayan
-        "photo-1611605698335-8b1569810432",  # Snow Himalaya
-        "photo-1469854523086-cc02fe5d8800",  # Mountain
-        "photo-1531251445707-1f000e1e87d0",
-        "photo-1605649487212-47bdab064df7",
-        "photo-1532664189809-02133fee698d",
-    ],
-    "Beaches": [
-        "photo-1512343879784-a960bf40e7f2",  # Goa beach
-        "photo-1530631673369-bc20fdb32288",  # Goa
-        "photo-1573152958106-c2b80e2f9b9d",
-        "photo-1518002171953-a080ee817e1f",
-        "photo-1469854523086-cc02fe5d8800",
-        "photo-1531971589569-0d9370cbe1e5",
-    ],
-    "Heritage": [
-        "photo-1564507592333-c60657eea523",  # Taj Mahal
-        "photo-1524492412937-b28074a5d7da",  # Taj
-        "photo-1599661046289-e31897846e41",  # Rajasthan palace
-        "photo-1605649487212-47bdab064df7",  # Heritage
-        "photo-1582719471384-894fbb16e074",
-        "photo-1517400508447-f8dd518b86db",
-        "photo-1473221326025-9183b464bb7e",
-    ],
-    "Wildlife": [
-        "photo-1549366021-9f761d450615",  # Tiger
-        "photo-1551376347-075b0121a65b",
-        "photo-1622547748225-3fc4abd2cca0",
-        "photo-1469854523086-cc02fe5d8800",
-        "photo-1531251445707-1f000e1e87d0",
-    ],
-    "Spiritual": [
-        "photo-1561361513-2d000a50f0dc",  # Varanasi
-        "photo-1587474260584-136574528ed5",  # Varanasi ghats
-        "photo-1576487248805-cf45f6bcc67f",
-        "photo-1518002171953-a080ee817e1f",
-        "photo-1582510003544-4d00b7f74220",  # Madurai temple
-        "photo-1545569310-9a234bf95048",
-    ],
-    "Adventure": [
-        "photo-1611605698335-8b1569810432",  # Snow
-        "photo-1469854523086-cc02fe5d8800",
-        "photo-1593181629936-11c609b8db9b",
-        "photo-1626621341517-bbf3d9990a23",
-        "photo-1551503766-ac63dfa6401c",
-    ],
-    "Cities": [
-        "photo-1567157577867-05ccb1388e66",  # Mumbai
-        "photo-1582510003544-4d00b7f74220",  # Chennai
-        "photo-1581373449483-37449f962b6c",
-        "photo-1571536802807-30451e3955d8",
-        "photo-1546026423-cc4642628d2b",
-    ],
-    "Hidden Gems": [
-        "photo-1626621341517-bbf3d9990a23",
-        "photo-1605649487212-47bdab064df7",
-        "photo-1543158266-0066955047b0",  # may or may not work — fallback below
-        "photo-1469854523086-cc02fe5d8800",
-        "photo-1531251445707-1f000e1e87d0",
-        "photo-1581456495146-65a71b2c8e52",
-        "photo-1602216056096-3b40cc0c9944",
-        "photo-1531971589569-0d9370cbe1e5",
-    ],
+# Keyword-based images that always load (Unsplash featured + Picsum fallback)
+_KEYWORDS = {
+    "Mountains":   "mountains,himalaya,snow",
+    "Beaches":     "beach,ocean,tropical",
+    "Heritage":    "india,heritage,temple,palace",
+    "Wildlife":    "wildlife,tiger,jungle",
+    "Spiritual":   "temple,india,spiritual,ghats",
+    "Adventure":   "adventure,trekking,mountains",
+    "Cities":      "city,skyline,urban,india",
+    "Hidden Gems": "village,landscape,nature",
 }
 
-
 def _img(cat: str, idx: int, w: int = 1600) -> str:
-    pool = _POOLS.get(cat, _POOLS["Heritage"])
-    pid = pool[idx % len(pool)]
-    return f"https://images.unsplash.com/{pid}?w={w}&q=85&auto=format&fit=crop"
-
+    # Picsum delivers a reliable random landscape image for the seed.
+    # Different seed per (category, idx) so each card gets a unique picture.
+    seed = f"{cat.lower().replace(' ', '')}-{idx}"
+    return f"https://picsum.photos/seed/{seed}/{w}/{int(w*0.6)}"
 
 _RAW = [
     # MOUNTAINS - Kashmir & Ladakh

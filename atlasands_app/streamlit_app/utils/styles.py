@@ -445,36 +445,28 @@ def render_theme_toggle(key_suffix: str = "main"):
     if st.button(label, key=f"theme_toggle_{key_suffix}", use_container_width=True):
         set_theme("light" if current == "dark" else "dark")
         st.rerun()
-
-
 def hero(image_url: str, eyebrow: str, title_html: str, subtitle: str):
-    st.markdown(
-        f"""
-        <div class="hero-wrap fade-in">
-            <img class="hero-bg-img" src="{image_url}" alt=""/>
-            <div class="hero-grain"></div>
-            <div class="hero-vignette"></div>
-            <div class="hero-inner">
-                <div class="eyebrow fade-in delay-1" style="color:#E8C77A;">{eyebrow}</div>
-                <h1 class="display-1 fade-in delay-2" style="margin: 18px 0 22px;">{title_html}</h1>
-                <p class="serif-quote fade-in delay-3" style="max-width:640px;">{subtitle}</p>
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    html = (
+        f'<div class="hero-wrap fade-in">'
+        f'<img class="hero-bg-img" src="{image_url}" alt=""/>'
+        f'<div class="hero-grain"></div>'
+        f'<div class="hero-vignette"></div>'
+        f'<div class="hero-inner">'
+        f'<div class="eyebrow fade-in delay-1" style="color:#E8C77A;">{eyebrow}</div>'
+        f'<h1 class="display-1 fade-in delay-2" style="margin: 18px 0 22px;">{title_html}</h1>'
+        f'<p class="serif-quote fade-in delay-3" style="max-width:640px;">{subtitle}</p>'
+        f'</div>'
+        f'</div>'
     )
-
-
+    st.markdown(html, unsafe_allow_html=True)
 def section_header(eyebrow: str, title: str, subtitle: str = ""):
     sub = f'<p class="body-soft" style="max-width:640px;margin-top:10px;">{subtitle}</p>' if subtitle else ""
-    st.markdown(
-        f"""
-        <div class="fade-in" style="margin: 60px 0 28px;">
-            <div class="eyebrow">{eyebrow}</div>
-            <h2 style="font-size: clamp(32px, 4.4vw, 52px); margin: 12px 0 0;">{title}</h2>
-            {sub}
-            <div class="gold-divider" style="margin-top:18px;"></div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    html = (
+        f'<div class="fade-in" style="margin: 60px 0 28px;">'
+        f'<div class="eyebrow">{eyebrow}</div>'
+        f'<h2 style="font-size: clamp(32px, 4.4vw, 52px); margin: 12px 0 0;">{title}</h2>'
+        f'{sub}'
+        f'<div class="gold-divider" style="margin-top:18px;"></div>'
+        f'</div>'
     )
+    st.markdown(html, unsafe_allow_html=True)
