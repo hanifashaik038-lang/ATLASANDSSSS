@@ -4,69 +4,69 @@
 # Hand-curated Unsplash photo IDs — each tagged to its theme.
 # All verified to be India travel imagery (mountains, beaches, temples, palaces, wildlife).
 _POOLS = {
-    "Mountains": [
-        "premium_photo-1664801768830-46734d0f0848",   # Ladakh mountain road
-        "photo-1591018533156-2cf4d4d27b0c",   # Himalayan range
-        "photo-1626621341517-bbf3d9990a23",   # Snow peaks Himachal
-        "photo-1611605698335-8b1569810432",   # Snow Auli
-        "photo-1593181629936-11c609b8db9b",   # Kashmir valley
-        "photo-1469854523086-cc02fe5d8800",   # Mountain road serene
-        "photo-1454496522488-7a8e488e8606",   # Misty mountains
+     "mountains": [
+        "photo-1464822759023-fed622ff2c3b",
+        "photo-1676218968741-8179dd7e533f",
+        "photo-1540979388789-6cee28a1cdc9",
+        "photo-1675629118861-dc8aa2acea74",
+        "photo-1501785888041-af3ef285b470",
+        "photo-1542224566-6e85f2e6772f",
+        "photo-1502085671122-2d218cd434e6"
     ],
-    "Beaches": [
-        "photo-1512343879784-a960bf40e7f2",   # Goa palm-lined beach
-        "photo-1602002418082-a4443e081dd1",   # Tropical coast India
-        "photo-1573843981267-be1999ff37cd",   # Kerala beach palms
-        "photo-1507525428034-b723cf961d3e",   # White sand beach
-        "photo-1519046904884-53103b34b206",   # Andaman-like turquoise
-        "photo-1501950183564-3c8bc1e856c0",   # Coastal sunrise
+    "beaches": [
+        "photo-1506953823976-52e1fdc0149a",
+        "photo-1682629632657-4ac307921295",
+        "photo-1510414842594-a61c69b5ae57",
+        "photo-1559494007-9f5847c49d94",
+        "photo-1506929562872-bb421503ef21",
+        "photo-1473116763249-2faaef81ccda"
     ],
-    "Heritage": [
-        "photo-1564507592333-c60657eea523",   # Taj Mahal classic
-        "photo-1524492412937-b28074a5d7da",   # Taj Mahal close-up
-        "photo-1548013146-72479768bada",      # Hawa Mahal Jaipur
-        "photo-1599661046289-e31897846e41",   # Rajasthan fort
-        "photo-1477587458883-47145ed94245",   # Heritage architecture
-        "photo-1597149959983-bff66f6c4d3a",   # Indian palace
-        "photo-1564507004663-b6dfb3c824d5",   # Mughal architecture
+    "heritage": [
+        "photo-1661963952208-2db3512ef3de",
+        "photo-1616428090830-59bd09d9f272",
+        "photo-1683009427051-00a2fe827a2c",
+        "photo-1676185844427-4e047f9a77f7",
+        "photo-1663513844814-5f2fd51e957a",
+        "photo-1519955045385-7cdb8e07c76f",
+        "photo-1542223092-f995144811d2"
     ],
-    "Wildlife": [
-        "photo-1549366021-9f761d450615",      # Bengal tiger
-        "photo-1574870111867-089730e5a72b",   # Indian elephant
-        "photo-1551969014-7d2c4cddf0b6",      # Tiger in jungle
-        "photo-1564349683136-77e08dba1ef7",   # Wildlife forest
-        "photo-1503656142023-618e7d1f435a",   # Safari landscape
+    "wildlife": [
+        "photo-1694270553677-22680efa4d56",
+        "photo-1669740462478-135db9b990ea",
+        "photo-1472396961693-142e6e269027",
+        "photo-1544985361-b420d7a77043",
+        "photo-1518709594023-6eab9bab7b23"
     ],
-    "Spiritual": [
-        "photo-1561361513-2d000a50f0dc",      # Varanasi ghats
-        "photo-1587474260584-136574528ed5",   # Varanasi sunset
-        "photo-1582510003544-4d00b7f74220",   # South Indian temple
-        "photo-1518002171953-a080ee817e1f",   # Temple architecture
-        "photo-1545569310-9a234bf95048",      # Rishikesh Ganga aarti
-        "photo-1577722422778-eb6bcb15ba9c",   # Indian temple gopuram
+    "spiritual": [
+        "photo-1518495973542-4542c06a5843",
+        "photo-1712733900711-d0b929d0d7cc",
+        "photo-1620766182966-c6eb5ed2b788",
+        "photo-1689838027426-bf5cc3a0131f",
+        "photo-1711547979445-a72c87dfd004",
+        "photo-1661963629241-52c812d5c7f8"
     ],
-    "Adventure": [
-        "photo-1611605698335-8b1569810432",   # Skiing/snow adventure
-        "photo-1551632811-561732d1e306",      # Trekking trail
-        "photo-1551632436-cbf8dd35adfa",      # Mountain trek
-        "photo-1517524008697-84bbe3c3fd98",   # White-water rafting
-        "photo-1473773508845-188df298d2d1",   # Paragliding/sky
+    "adventures": [
+        "photo-1568751302461-fc6f40fa9382",
+        "photo-1559677624-3c956f10d431",
+        "photo-1630879937467-4afa290b1a6b",
+        "photo-1661894232140-73d96a67731b",
+        "photo-1554710869-95f3df6a3197"
     ],
-    "Cities": [
-        "photo-1567157577867-05ccb1388e66",   # Mumbai skyline
-        "photo-1597149959983-bff66f6c4d3a",   # Indian street
-        "photo-1582510003544-4d00b7f74220",   # Chennai-Madras
-        "photo-1480714378408-67cf0d13bc1b",   # Modern city
-        "photo-1514222134-b57cbb8ce073",      # Delhi cityscape
+    "cities": [
+        "photo-1602643454724-21d5a40722db",
+        "photo-1595658658481-d53d3f999875",
+        "photo-1592639296346-560c37a0f711",
+        "photo-1600713193398-7782a2874f5d",
+        "photo-1560319003-24094e042e10"
     ],
-    "Hidden Gems": [
-        "photo-1602216056096-3b40cc0c9944",   # Kerala backwaters
-        "photo-1605649487212-47bdab064df7",   # Hidden village India
-        "photo-1581456495146-65a71b2c8e52",   # Rural landscape
-        "photo-1531251445707-1f000e1e87d0",   # Offbeat mountains
-        "photo-1469854523086-cc02fe5d8800",   # Quiet road
-        "photo-1532664189809-02133fee698d",   # Forest valley
-    ],
+    "hidden_gems": [
+        "photo-1707985770057-4a56edd69666",
+        "photo-1727685950236-3f11e6414a6b",
+        "photo-1661930618375-aafabc2bf3e7",
+        "photo-1697817665440-f988c6d5080f",
+        "photo-1693560190733-1754239a628a",
+        "photo-1697730399235-bcca956cc6d7"
+    ]
 }
 
 
