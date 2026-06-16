@@ -5,7 +5,7 @@
 # All verified to be India travel imagery (mountains, beaches, temples, palaces, wildlife).
 _POOLS = {
     "Mountains": [
-        "photo-1626015449154-bd31bb46c08e",   # Ladakh mountain road
+        "premium_photo-1664801768830-46734d0f0848",   # Ladakh mountain road
         "photo-1591018533156-2cf4d4d27b0c",   # Himalayan range
         "photo-1626621341517-bbf3d9990a23",   # Snow peaks Himachal
         "photo-1611605698335-8b1569810432",   # Snow Auli
