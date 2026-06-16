@@ -3,79 +3,23 @@
 # All photo IDs below were verified live (HTTP 200) — categorized by best fit.
 # Hand-curated Unsplash photo IDs — each tagged to its theme.
 # All verified to be India travel imagery (mountains, beaches, temples, palaces, wildlife).
-_POOLS = {
-     "mountains": [
-        "photo-1464822759023-fed622ff2c3b",
-        "photo-1676218968741-8179dd7e533f",
-        "photo-1540979388789-6cee28a1cdc9",
-        "photo-1675629118861-dc8aa2acea74",
-        "photo-1501785888041-af3ef285b470",
-        "photo-1542224566-6e85f2e6772f",
-        "photo-1502085671122-2d218cd434e6"
-    ],
-    "beaches": [
-        "photo-1506953823976-52e1fdc0149a",
-        "photo-1682629632657-4ac307921295",
-        "photo-1510414842594-a61c69b5ae57",
-        "photo-1559494007-9f5847c49d94",
-        "photo-1506929562872-bb421503ef21",
-        "photo-1473116763249-2faaef81ccda"
-    ],
-    "heritage": [
-        "photo-1661963952208-2db3512ef3de",
-        "photo-1616428090830-59bd09d9f272",
-        "photo-1683009427051-00a2fe827a2c",
-        "photo-1676185844427-4e047f9a77f7",
-        "photo-1663513844814-5f2fd51e957a",
-        "photo-1519955045385-7cdb8e07c76f",
-        "photo-1542223092-f995144811d2"
-    ],
-    "wildlife": [
-        "photo-1694270553677-22680efa4d56",
-        "photo-1669740462478-135db9b990ea",
-        "photo-1472396961693-142e6e269027",
-        "photo-1544985361-b420d7a77043",
-        "photo-1518709594023-6eab9bab7b23"
-    ],
-    "spiritual": [
-        "photo-1518495973542-4542c06a5843",
-        "photo-1712733900711-d0b929d0d7cc",
-        "photo-1620766182966-c6eb5ed2b788",
-        "photo-1689838027426-bf5cc3a0131f",
-        "photo-1711547979445-a72c87dfd004",
-        "photo-1661963629241-52c812d5c7f8"
-    ],
-    "adventures": [
-        "photo-1568751302461-fc6f40fa9382",
-        "photo-1559677624-3c956f10d431",
-        "photo-1630879937467-4afa290b1a6b",
-        "photo-1661894232140-73d96a67731b",
-        "photo-1554710869-95f3df6a3197"
-    ],
-    "cities": [
-        "photo-1602643454724-21d5a40722db",
-        "photo-1595658658481-d53d3f999875",
-        "photo-1592639296346-560c37a0f711",
-        "photo-1600713193398-7782a2874f5d",
-        "photo-1560319003-24094e042e10"
-    ],
-    "hidden_gems": [
-        "photo-1707985770057-4a56edd69666",
-        "photo-1727685950236-3f11e6414a6b",
-        "photo-1661930618375-aafabc2bf3e7",
-        "photo-1697817665440-f988c6d5080f",
-        "photo-1693560190733-1754239a628a",
-        "photo-1697730399235-bcca956cc6d7"
-    ]
+# Keyword-based images that always load (Unsplash featured + Picsum fallback)
+_KEYWORDS = {
+    "Mountains":   "mountains,himalaya,snow",
+    "Beaches":     "beach,ocean,tropical",
+    "Heritage":    "india,heritage,temple,palace",
+    "Wildlife":    "wildlife,tiger,jungle",
+    "Spiritual":   "temple,india,spiritual,ghats",
+    "Adventure":   "adventure,trekking,mountains",
+    "Cities":      "city,skyline,urban,india",
+    "Hidden Gems": "village,landscape,nature",
 }
 
-
 def _img(cat: str, idx: int, w: int = 1600) -> str:
-    """Return a category-themed Unsplash image URL."""
-    pool = _POOLS.get(cat, _POOLS["Heritage"])
-    pid = pool[idx % len(pool)]
-    # auto=format and fit=crop make the URL pass Chrome's ORB checks reliably
-    return f"https://images.unsplash.com/{pid}?w={w}&q=85&auto=format&fit=crop"
+    # Picsum delivers a reliable random landscape image for the seed.
+    # Different seed per (category, idx) so each card gets a unique picture.
+    seed = f"{cat.lower().replace(' ', '')}-{idx}"
+    return f"https://picsum.photos/seed/{seed}/{w}/{int(w*0.6)}"
 _RAW = [
     # MOUNTAINS - Kashmir & Ladakh
     ("srinagar","Srinagar","Jammu & Kashmir","Mountains","₹18,000","Apr–Oct","Drift across Dal Lake in a shikara at sunrise as the Pir Panjal glows in molten gold."),
